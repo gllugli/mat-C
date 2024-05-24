@@ -9,19 +9,19 @@ int main() {
 	
 	setlocale(LC_ALL, "portuguese");
 	
-	int mat[3][4], aux[10], i, j;
+	int mat[3][4], aux[10], l, c;
 	
-	for (i = 0; i < 4; i++) {
-		for (j = 0; j < 3; j++) {
-			printf("\nDigite %dº número da %dº coluna da matriz: ", j+1, i+1);
-			mat[j][i] = atoi(gets(aux));
+	for (l = 0; l < 3; l++) { //Para trocar a linha
+		for (c = 0; c < 4; c++) { //Para trocar a coluna
+			printf("\nDigite %dº número da %dª linha ", c+1, l+1);
+			mat[l][c] = atoi(gets(aux));
 		}
 		printf("\n");
 	}
 	
-	for (i = 0; i < 4; i++) {
-		for (j = 0; j < 3; j++) {
-			printf("\n%dº número da %dº coluna da matriz: %d", j+1, i+1, mat[j][i]);
+	for (l = 0; l < 3; l++) {
+		for (c = 0; c < 4; c++) {
+			printf("\n%dº número da %dª linha da matriz: %d", c+1, l+1, mat[l][c]);
 		}
 		printf("\n");
 	}
