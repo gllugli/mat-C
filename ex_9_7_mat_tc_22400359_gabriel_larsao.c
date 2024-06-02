@@ -12,27 +12,40 @@ int main() {
 	
 	setlocale(LC_ALL, "portuguese");
 	
-	int num[3][3] = {{1,2,3}, {4,5,6},{7,8,9}}, c, l, mult;
+	int num[3][3], c, l, mult;
 	
-	//Imprimir
+	//Ler números
 	for (l = 0; l < 3; l++) {
 		for (c = 0; c < 3; c++) {
-			printf("\nLinha %d, Elemento %d: %d	", l + 1, c + 1, num[l][c]);
+			printf("\nDigite um número pra posição %d da linha %d: ", c, l+1);
+			scanf("%d", &num[l][c]);
 		}
 	}
+	
+	//Imprimir
+	
+    for (l = 0; l < 3; l++) {
+    	printf("\n");
+        for (int c = 0; c < 3; c++) {
+            printf("%d  ", num[l][c]);
+            if (c == 3)
+                printf("\n");
+        }
+    }
 		
 	printf("\n\nDigite um número para multiplicar a matriz: ");
 	scanf("%d", &mult);
 		
 	//Multiplicar 
 	for (l = 0; l < 3; l++) {
-		for (c = 0; c < 3; c++) {
-			num[l][c] *= mult;
-			printf("\nLinha %d, Elemento %d: %d", l+1, c+1, num[l][c]);		
-		}
-	}
-	
-	
+    	printf("\n");
+        for (int c = 0; c < 3; c++) {
+        	num[l][c] *= mult;
+            printf("%d  ", num[l][c]);
+            if (c == 3)
+                printf("\n");
+        }
+    }
 	
 	return 0;
 }
